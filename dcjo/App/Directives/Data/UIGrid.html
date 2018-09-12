@@ -1,0 +1,36 @@
+﻿<div class="panel panel-primary">
+
+   
+
+    
+    <div class="panel-heading">Employee Data Sheet</div>
+    <div  > testdata=  {{testdata}}</div>
+    <div> testdata=  {{testdatafrommain}}</div>
+    
+    <input type="button" value="Save121" ng-click="func()" />
+    <table class="table">
+        <thead>
+            <tr>
+                
+                 
+                <th ng-repeat="(header,value) in datasource[0]">
+                {{header}}
+               
+           </tr> 
+        </thead>
+        <tbody>
+            <tr ng-repeat="employee in datasource">
+
+
+                <td ng-repeat="(header,value) in datasource[0]">
+                    {{ value }}
+                </td>
+               <td>
+
+                  
+               </td>
+                
+            </tr>
+        </tbody>
+    </table>
+</div>

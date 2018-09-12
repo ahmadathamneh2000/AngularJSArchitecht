@@ -1,0 +1,113 @@
+﻿   
+ 
+      
+<script src="../../Scripts/jquery-1.10.2.min.js"></script>
+<script src="../../Scripts/angular.js"></script>
+<script src="../../Scripts/angular.min.js"></script>
+<script src="../../App/app.js"></script>
+<!--<script src="../EmployeeController.js"></script>-->
+<script src="../ServiceLayer.js"></script>
+<script src="../RegistrationsController.js"></script>
+<script src="../Directives/Js/RegistrationsDirectives.js"></script>
+<script src="../Directives/Js/UIDirectives.js"></script>
+<link href="../../Content/bootstrap.css" rel="stylesheet" />
+<link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+<script src="../CustomerServiceController.js"></script>
+ <div ng-app="RegistrationLayer" ng-init="Update=true;List=false;add=true" ng-controller="Registrations" class="table-responsive">
+     <div ng-hide="List">
+         asdsadsadasdasdasdasdsad
+         <input type="button" value="AddNew"  ng-click="PrepareInsert()" />   
+         <table id="mytable" class="table table-bordred table-striped">
+             <thead>
+             <th>ID</th>
+             <th>First Name</th>
+             <th>Last Name</th>
+             <th>Address</th>
+             <th>Salary</th>
+             <th>DOB</th>
+             </thead>
+             <tbody>
+                
+                 <tr ng-repeat="item in ListOfEmployee">
+
+
+                     <td><input type="button" value="Edit" ng-click="GetByID(item.EmployeeID)" />   </td>
+                     <td><label ng-model="item.FirstName">{{item.FirstName}} </label> </td>
+                     <td>{{item.LastName}}</td>
+                     <td>{{item.Address}}</td>
+                     <td>{{item.Salary}}</td>
+                     <td>{{item.DOB}}</td>
+
+
+
+                 </tr>
+             </tbody>
+         </table>
+     </div>
+     <div ng-hide="Update">
+         <table id="mytable1" class="table table-bordred table-striped">
+             <thead>
+             <th>ID</th>
+             <th>First Name</th>
+             <th>Last Name</th>
+             <th>Address</th>
+             <th>Salary</th>
+             <th>DOB</th>
+             </thead>
+             <tbody>
+                 <tr>
+
+                     <td><input type="number"  ng-bind="Emp.EmployeeID" /></td>
+                     <td><input type="text" ng-model="Emp.FirstName" /></td>
+                     <td><input type="text" ng-model="Emp.LastName" /></td>
+                     <td><input type="text" ng-model="Emp.Address" /></td>
+                     <td><input type="text" ng-model="Emp.Salary" /></td>
+                     <td><input type="text" ng-model="Emp.DOB" />
+                     <td><input type="button" value="Save" ng-click="UpdateEmp(Emp,Emp.EmployeeID)" />   </td>  
+                     
+
+
+
+                 </tr>
+             </tbody>
+         </table>
+     </div>
+
+     <div ng-hide="Insert" ng-init="Insert=true">
+         <table id="mytable1" class="table table-bordred table-striped">
+             <thead>
+             <th>ID</th>
+             <th>First Name</th>
+             <th>Last Name</th>
+             <th>Address</th>
+             <th>Salary</th>
+             <th>DOB</th>
+             </thead>
+             <tbody>
+                 <tr>
+
+                     <td><input type="number" ng-bind="Emp.EmployeeID" /></td>
+                     <td><input type="text" ng-model="Emp.FirstName" /></td>
+                     <td><input type="text" ng-model="Emp.LastName" /></td>
+                     <td><input type="text" ng-model="Emp.Address" /></td>
+                     <td><input type="text" ng-model="Emp.Salary" /></td>
+                     <td><input type="text" ng-model="Emp.DOB" />
+                     <td><input type="button" value="Save" ng-click="InsertEmp(Emp)" />   </td>
+
+
+
+
+                 </tr>
+             </tbody>
+         </table>
+     </div>
+      
+     <div athamneh-grid></div>
+     <ui-data-grid datasource="AthamnehRows" col="Columns"></ui-data-grid>
+
+</div>
+ 
+
+    
+ 
+
